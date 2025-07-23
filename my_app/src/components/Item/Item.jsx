@@ -1,13 +1,15 @@
+import { useState } from 'react';
 import './Item.css'
 export default function Item({ title }) {
-
+    const bool = 'false';
+    const [name, state]= useState(title)
     const update = ()=>{
-        console.log(title);   
+        state('Update')   
     }
     return(
         <div>
-            {title}
-            <button className="btn" onClick={update}>Click Me!</button>
+            {name}
+            <button className={bool?"btn":"fbtn"} onClick={update}>Click Me!</button>
         </div>
     )
 }
